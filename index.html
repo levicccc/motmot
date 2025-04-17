@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>motmot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: violet;
+            color: #333;
+            text-align: center;
+            padding: 40px;
+        }
+        h1 {
+            color: #cc0000;
+        }
+        .love-message {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+        button {
+            background: #cc0000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #b30000;
+        }
+        #loveImage {
+            margin: 20px auto;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border: 4px solid #cc0000;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: opacity 0.4s ease;
+        }
+    </style>
+</head>
+<body>
+    <h1>HAPPY 2ND MONTHSARY BABY!</h1>
+    <div class="love-message" id="loveMessage">
+        click the picture also lablab<3
+    </div>
+    <button onclick="showMessage()">Click me:(</button><img id="loveImage" src="Bebe.jpeg" alt="" onclick="nextImage()">
+
+<div style="left: 0; width: 100%; height: 152px; position: relative;">
+  <iframe src="https://open.spotify.com/embed/track/28jyMOvRd82hQp95Z9ftXw?utm_source=oembed"
+    style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;"
+    allowfullscreen allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture;">
+  </iframe>
+</div>
+
+<script>
+    function showMessage() {
+        const messages = [
+            "Happy 2nd monthsary baby, thank you for everything^^",
+            "I am so luck to have you in my life, please always stay po",
+            "Ayokong mawala ka sakin, aalagaan kita araw araw at hindi kita pababayaan lablab, ako magiging kakampi mo sa tuwing mag isa ka.",
+            "Ipapadama ko sayo na never kita iiwan, sa hirap at ginhawa kahit sa mga sitwasyong sobrang lala na",
+            "Forever starts with us, kaya wag ikaw susuko ka? mahal na mahal kitaa"
+        ];
+        const randomIndex = Math.floor(Math.random() * messages.length);
+        document.getElementById('loveMessage').innerText = messages[randomIndex];
+    }
+
+    const imageUrls = [
+        "Bebe.jpeg",
+        "oo.jpeg",
+        "oko.jpeg",
+        "okie.jpeg",
+        "bkk.PNG",
+         "levv.jpeg"
+    ];
+    let currentImageIndex = 0;
+
+    function nextImage() {
+        const img = document.getElementById('loveImage');
+        img.style.opacity = 0;
+        setTimeout(() => {
+            currentImageIndex = (currentImageIndex + 1) % imageUrls.length;
+            img.src = imageUrls[currentImageIndex];
+            img.style.opacity = 1;
+        }, 400);
+    }
+</script>
+
+</body>
+</html>
